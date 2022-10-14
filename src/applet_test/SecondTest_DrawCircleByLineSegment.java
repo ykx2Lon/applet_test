@@ -22,20 +22,10 @@ public class SecondTest_DrawCircleByLineSegment extends Applet {
 		// 畫出10*10的格子
 		paintGrid(g);
 		
-		Color originalColor = g.getColor();
-		g.setColor(Color.RED);
-		g.drawRect(10, 10, 100, 200);
+		//隨便畫一些圖形
+		paintSomeGeometry(g);
 		
-		g.setColor(Color.GREEN);
-		g.drawOval(200, 10, 100, 200);
 		
-		g.setColor(Color.BLUE);
-		g.drawLine(400, 10, 400, 200);
-		
-		g.setColor(Color.PINK);
-		int [] xArray = {430,410,430,410,430,410} ;
-		int [] yArray = {10,50,60,100,110,150};
-		g.drawPolygon( xArray, yArray, xArray.length);
 		super.paint(g);
 	}
 
@@ -51,6 +41,24 @@ public class SecondTest_DrawCircleByLineSegment extends Applet {
 		// 畫橫線:y不變，x=0~maxX(畫布寬)
 		for (int i = 0; i < HEIGHT; i += 10)
 			g.drawLine(0, i, WIDTH, i);
+		g.setColor(originalColor);
+	}
+	
+	private void paintSomeGeometry(Graphics g) {
+		Color originalColor = g.getColor();
+		g.setColor(Color.RED);
+		g.drawRect(10, 10, 100, 200);
+		
+		g.setColor(Color.GREEN);
+		g.drawOval(200, 10, 100, 200);
+		
+		g.setColor(Color.BLUE);
+		g.drawLine(400, 10, 400, 200);
+		
+		g.setColor(Color.PINK);
+		int [] xArray = {430,410,430,410,430,410} ;
+		int [] yArray = {10,50,60,100,110,150};
+		g.drawPolygon( xArray, yArray, xArray.length);
 		g.setColor(originalColor);
 	}
 
